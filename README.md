@@ -1,27 +1,66 @@
-# About
+# Gnome-Shell Extension - HyperX Battery Indicator
 
-Gnome-Shell extension displaying battery percentage for bluetooth devices
+**Displays battery percentage for HyperX devices (Cloud II Core, Cloud II Wireless, Cloud Stinger 2 Wireless, Cloud Alpha Wireless).**
 
-https://extensions.gnome.org/extension/3991/bluetooth-battery/
+Forked from [https://github.com/MichalW/gnome-bluetooth-battery-indicator](https://github.com/MichalW/gnome-bluetooth-battery-indicator)
+
+Hid implementation based on  [https://github.com/auto94/HyperX-Cloud-2-Battery-Monitor](https://github.com/auto94/HyperX-Cloud-2-Battery-Monitor)
 
 
-## Manual Installation
+Vertical:
+![Call](static/Screenshot-2.png)
 
-1. Clone the repo
-```sh
-git clone git@github.com:MichalW/gnome-bluetooth-battery-indicator.git
-```
+Horizontal:
+![Call](static/Screenshot-1.png)
 
-2. Init submodules
-```sh
-git submodule update --init
-```
 
-3. Copy to extensions
-```sh
-cp -R gnome-bluetooth-battery-indicator ~/.local/share/gnome-shell/extensions/bluetooth-battery@michalw.github.com
-```
+## Compatibility
 
-## Troubleshoot
+Cloud II Core,
+Cloud II Wireless,
+Cloud Stinger 2 Wireless,
+Cloud Alpha Wireless
+
+## Installation
+
+**Prerequisites:**
+
+*   GNOME Shell (version 40 or later is recommended)
+*   `python3-hid` (Debian/Ubuntu) – `sudo apt install python3-hid`
+
+### Manual Installation
+
+1.  **Clone the repo:**
+
+    ```sh
+    git clone https://github.com/deividgermano/gnome-hyperx-battery-indicator.git
+    ```
+2. **Udev Rules** (Crucial for HID access)
+
+    Create a new file in `/etc/udev/rules.d/99-HyperHeadset.rules` with the following content inside:
+
+    ```
+    SUBSYSTEMS=="usb", ATTRS{idProduct}=="018b", ATTRS{idVendor}=="03f0", MODE="0666"
+    SUBSYSTEMS=="usb", ATTRS{idProduct}=="0696", ATTRS{idVendor}=="03f0", MODE="0666"
+    SUBSYSTEMS=="usb", ATTRS{idProduct}=="1718", ATTRS{idVendor}=="0951", MODE="0666"
+    SUBSYSTEMS=="usb", ATTRS{idProduct}=="0d93", ATTRS{idVendor}=="03f0", MODE="0666"
+    ```
+
+    Reload udev rules:
+
+    ```
+    sudo udevadm control --reload && sudo udevadm trigger
+    ```
+  
+
+3.  **Copy to extensions:**
+
+    ```sh
+    cp -R gnome-hyperx-battery-indicator ~/.local/share/gnome-shell/extensions/hyperx-battery@deividgermano.github.com.shell-extension
+    ```
+
+4. Enable using extension manager
+
+## Troubleshooting
 
 Show debug log of this plugin: `journalctl -f -o cat /usr/bin/gnome-shell`

@@ -22,12 +22,12 @@ msgid "Refresh"
 msgstr "Obnovit"
 
 #: extension.js:63
-msgid "Force refresh bluetooth"
-msgstr "Vynutit obnovení bluetooth"
+msgid "Force refresh"
+msgstr "Vynutit obnovení"
 
 #: indicator.js:11
-msgid "Bluetooth battery Indicator"
-msgstr "Indikátor baterie Bluetooth"
+msgid "Hyperx battery Indicator"
+msgstr "Indikátor baterie"
 
 #: indicator.js:36
 msgid "Settings"

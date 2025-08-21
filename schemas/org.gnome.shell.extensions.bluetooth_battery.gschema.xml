@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schemalist gettext-domain="gnome-shell-extensions">
     <schema
-        id="org.gnome.shell.extensions.bluetooth_battery_indicator"
-        path="/org/gnome/shell/extensions/bluetooth_battery_indicator/">
+        id="org.gnome.shell.extensions.hyperx_battery_indicator"
+        path="/org/gnome/shell/extensions/hyperx_battery_indicator/">
 
         <key name="interval" type="i">
             <default>5</default>

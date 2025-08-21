@@ -11,7 +11,7 @@ import * as Constants from './constants.js';
 export const IndicatorController = GObject.registerClass(
     class Indicator extends PanelMenu.Button {
         _init() {
-            super._init(0.0, _('Bluetooth battery Indicator'));
+            super._init(0.0, _('Hyperx battery Indicator'));
             this._container = new St.BoxLayout();
             this._labels = [];
             this._icons = [];
@@ -77,7 +77,7 @@ export const IndicatorController = GObject.registerClass(
             const label = new St.Label({
                 y_align: Clutter.ActorAlign.CENTER
             });
-            label.set_style('margin-right: 5px;');
+            label.set_style('font-size: 12px;');
 
             return label;
         }

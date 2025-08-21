@@ -191,16 +191,12 @@ export default GObject.registerClass(
 
         _getDeviceIconComboBox(device) {
             const comboBox = new Gtk.ComboBoxText();
-            const defaultIcon = device.defaultIcon || 'battery-full-symbolic';
+            const defaultIcon = device.defaultIcon || 'audio-headphones-symbolic';
 
             const icons = [
                 { key: defaultIcon, text: _('Default') },
                 { key: 'audio-headphones-symbolic', text: _('Headphones') },
-                { key: 'input-mouse-symbolic', text: _('Mouse') },
-                { key: 'input-keyboard-symbolic', text: _('Keyboard') },
                 { key: 'audio-headset-symbolic', text: _('Headset') },
-                { key: 'input-gaming-symbolic', text: _('Game Controller') },
-                { key: 'audio-speakers-symbolic', text: _('Speaker') },
                 { key: 'battery-full-symbolic', text: _('Battery') },
             ];
 

@@ -23,12 +23,12 @@ msgid "Refresh"
 msgstr "Rafraîchir"
 
 #: extension.js:63
-msgid "Force refresh bluetooth"
-msgstr "Rafraîchissement forcé du bluetooth"
+msgid "Force refresh"
+msgstr "Rafraîchissement forcé du"
 
 #: indicator.js:11
-msgid "Bluetooth battery Indicator"
-msgstr "Indicateur de batterie bluetooth"
+msgid "Hyperx battery Indicator"
+msgstr "Indicateur de batterie"
 
 #: indicator.js:36
 msgid "Settings"

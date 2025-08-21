@@ -1,9 +1,12 @@
 {
-  "name": "Bluetooth battery indicator",
-  "description": "Bluetooth battery indicator",
-  "uuid": "bluetooth-battery@michalw.github.com",
-  "settings-schema": "org.gnome.shell.extensions.bluetooth_battery_indicator",
-  "gettext-domain": "bluetooth_battery_indicator",
-  "url": "https://github.com/MichalW/gnome-bluetooth-battery-indicator",
+  "name": "Hyperx battery indicator",
+  "description": "A GNOME Shell extension that displays the battery status of HyperX wireless devices in the system tray. Provides real-time battery level monitoring for keep track of your HyperX peripherals.",
+    "donations": {
+    "buymeacoffee": "deividgermano"
+  },
+  "uuid": "hyperx-battery@deividgermano.github.com",
+  "settings-schema": "org.gnome.shell.extensions.hyperx_battery_indicator",
+  "gettext-domain": "hyperx_battery_indicator",
+  "url": "https://github.com/deividgermano/gnome-hyperx-battery-indicator",
   "shell-version": [ "45", "46", "47", "48" ]
 }
