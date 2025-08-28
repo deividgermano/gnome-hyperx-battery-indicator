@@ -1,6 +1,6 @@
 {
   "name": "Hyperx battery indicator",
-  "description": "A GNOME Shell extension that displays the battery status of HyperX wireless devices in the system tray. Provides real-time battery level monitoring for keep track of your HyperX peripherals.",
+  "description": "A GNOME Shell extension that displays the battery status of HyperX wireless devices in the system tray. Provides real-time battery level monitoring for keep track of your HyperX peripherals. \nRequire python-hid library and add udev rules to allow access to HyperX devices \nThis extension is not affiliated, funded, or in any way associated with HyperX.",
     "donations": {
     "buymeacoffee": "deividgermano"
   },

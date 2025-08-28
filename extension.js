@@ -17,12 +17,15 @@ export default class BluetoothBatteryIndicatorExtension extends Extension {
 
         this._getRefreshButton();
 
-        this._loop = GLib.idle_add(GLib.PRIORITY_DEFAULT_IDLE, this._runLoop.bind(this));
+        this._idle = GLib.idle_add(GLib.PRIORITY_DEFAULT_IDLE, this._runLoop.bind(this));
     }
 
     _runLoop() {
         this._refresh();
 
+        if (this._loop) {
+            GLib.Source.remove(this._loop);
+        }
         const interval = this._settings.getInterval();
         this._loop = GLib.timeout_add_seconds(GLib.PRIORITY_DEFAULT, interval * 60, this._runLoop.bind(this));
     }
@@ -67,11 +70,27 @@ export default class BluetoothBatteryIndicatorExtension extends Extension {
     }
 
     disable() {
-        GLib.Source.remove(this._loop);
+        if (this._idle !== null) {
+            GLib.Source.remove(this._idle);
+            this._idle = null;
+        }
 
-        this._controller.destroy();
-        this._controller = null;
-        this._indicator.destroy();
-        this._indicator = null;
+        if (this._loop !== null) {
+            GLib.Source.remove(this._loop);
+            this._loop = null;
+        }
+
+        if (this._controller !== null) {
+            this._controller.destroy();
+            this._controller = null;
+        }
+        if (this._indicator !== null) {
+            this._indicator.destroy();
+            this._indicator = null;
+        }
+
+        if (this._settings !== null) {
+            this._settings = null;
+        }
     }
 }
